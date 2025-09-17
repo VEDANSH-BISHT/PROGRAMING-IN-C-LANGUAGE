@@ -9,7 +9,7 @@ int main() {
     printf("Enter number of units used: ");
     scanf("%d", &units);
 
-    // Surcharge calculation
+    
     if (units <= 100) {
         sab = 0;
     } else if (units <= 300) {
@@ -20,7 +20,7 @@ int main() {
         sab = 300;
     }
 
-    // Charge calculation
+    
     if (units <= 100) {
         chrg = units * 3;
     } else if (units <= 300) {
@@ -37,3 +37,4 @@ int main() {
 
     return 0;
 }
+
