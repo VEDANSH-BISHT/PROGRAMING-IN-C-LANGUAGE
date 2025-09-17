@@ -1,42 +1,32 @@
 program that checks a number with any no. of digits is an Armstrong number...
 
-
 #include <stdio.h>
+#include <math.h>
 
 int main() {
-    int num, originalNum, remainder, n = 0, result = 0;
+    int n, temp, sum = 0;
+    printf("Enter a number: ");
+    scanf("%d", &n);
 
-    printf("Enter an integer: ");
-    scanf("%d", &num);
+    temp = n;
+    int digits = (int)log10(n) + 1;
 
-    originalNum = num;
+    while (temp != 0) {
+        int r = temp % 10;
 
-    while (originalNum != 0) {
-        originalNum = originalNum / 10;
-        n = n + 1;
-    }
-
-    originalNum = num;
-
-    while (originalNum != 0) {
-        remainder = originalNum % 10;
-
-        int remainder_power = 1;
-        int i = 0;
-        while (i < n) {
-            remainder_power = remainder_power * remainder;
-            i = i + 1;
+        int power = 1;
+        for (int i = 0; i < digits; i++) {
+            power = power * r;
         }
 
-        result = result + remainder_power;
-        originalNum = originalNum / 10;
+        sum = sum + power;
+        temp = temp / 10;
     }
 
-    if (result == num) {
-        printf("%d is an Armstrong number.\n", num);
-    } else {
-        printf("%d is not an Armstrong number.\n", num);
-    }
+    if (sum == n)
+        printf("%d is an Armstrong number.\n", n);
+    else
+        printf("%d is not an Armstrong number.\n", n);
 
     return 0;
 }
