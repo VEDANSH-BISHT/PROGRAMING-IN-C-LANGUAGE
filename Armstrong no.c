@@ -16,11 +16,12 @@ while(n>0)
 printf("reverse is= %d \\n",sum);
 }
 if (sum==temp)
-{printf("No is pelindrome");}
+{printf("No is armstrong no.");}
 else
-{printf("not a pelindrome");}
+{printf("not a armstrong no.");}
 
 return 0;
+
 
 
 
